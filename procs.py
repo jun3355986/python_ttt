@@ -6,6 +6,12 @@ from multiprocessing import queues
 
 from my_primes import is_prime, NUMBERS
 
+"""
+结论：
+python里多进程可以并行处理任务，一般情况下使用核心数越多，性能越好。
+但是，超过最大核心数，性能变化不大甚至下降。
+"""
+
 class PrimeResult(NamedTuple):
     n: int
     prime: bool

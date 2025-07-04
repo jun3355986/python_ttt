@@ -7,6 +7,12 @@ from threading import Thread
 
 from my_primes import is_prime, NUMBERS
 
+"""
+结论：
+python里多线程可以并发处理任务， 但是thread的多线程处理任务时跟cpu核心数线程数多少无关。
+在cpu密集型任务中，thread的多线程处理任务时，性能不如多进程。而且线程数越多，性能越差。
+"""
+
 class PrimeResult(NamedTuple):
     n: int
     prime: bool
