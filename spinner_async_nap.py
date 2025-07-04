@@ -1,6 +1,7 @@
 import asyncio
 import itertools
 import time
+from my_primes import is_prime_async, print_time_async
 
 def main() -> None:
     result = asyncio.run(supervisor())
@@ -28,8 +29,10 @@ async def spin(msg: str) -> None:
     print(f'\r{blanks}\r', end='')
 
 async def slow() -> int:
-    await asyncio.sleep(5)
+    # await asyncio.sleep(5)
     # time.sleep(5)
+    # await is_prime_async(50_000_111_000_222_021)
+    await print_time_async(is_prime_async, 50_000_111_000_222_021)
     return 42
 
 
